@@ -34,4 +34,9 @@ describe('Board', function () {
         board.setWinningCombinations();
         expect(board.winningCombinations.length).toEqual(8);
     })
+
+    it('should set the board and winning combinations to play', function () {
+        board.setBoardToPlay();
+        expect(board.winningCombinations.length).toEqual(8);
+    })
 })

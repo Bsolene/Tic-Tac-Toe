@@ -17,7 +17,7 @@ class Board {
 
     winningCombinationRows() {
         for (let i = 0; i < this.table.length; i += this.dimensionBoard) {
-            this.winningRows.push(this.table.slice(i, i + this.dimensionBoard))
+            this.winningRows.push(this.table.slice(i, i + this.dimensionBoard));
         };
     };
 
@@ -31,7 +31,7 @@ class Board {
         };
 
         for (let z = 0; z < sortedSquares.length; z += this.dimensionBoard) {
-            this.winningColumns.push(sortedSquares.slice(z, z + this.dimensionBoard))
+            this.winningColumns.push(sortedSquares.slice(z, z + this.dimensionBoard));
         };
     };
 
@@ -55,6 +55,11 @@ class Board {
         this.winningCombinationColumns();
         this.winningCombinationDiagonal();
         this.winningCombinations = this.winningRows.concat(this.winningColumns, this.winningDiagonal);
+    };
+
+    setBoardToPlay() {
+        this.createBoard();
+        this.setWinningCombinations();
     };
 };
 

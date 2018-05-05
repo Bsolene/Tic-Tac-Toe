@@ -1,8 +1,13 @@
 describe('Game', function () {
     var game;
     beforeEach(function () {
-        game = new Game;
+        game = new Game(3);
     });
+
+    it('should set the board when it starts', function () {
+        game.setStartingConditions();
+        expect(game.board.winningCombinations.length).toEqual(8);
+    })
 
     it('should check that the next player is O', function () {
         game.play(2);
@@ -13,5 +18,15 @@ describe('Game', function () {
         game.play(2);
         game.play(3);
         expect(game.currentPlayer.type).toEqual('X')
+    });
+
+    it('should check the all the winning squares', function (){
+        game.play(2);
+        game.play(5);
+        game.play(1);
+        game.play(6);
+        game.play(0);
+        expect(game.on).toBeFalsy();
+        expect(game.isWinner()).toBe(true);
     });
 })
