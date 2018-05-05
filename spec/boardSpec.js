@@ -21,4 +21,11 @@ describe('Board', function () {
         board.winningCombinationColumns();
         expect(board.winningColumns.length).toEqual(3)
     })
+
+    it('should create the winning combination for the diagonal', function () {
+        board.createBoard();
+        board.winningCombinationRows();
+        board.winningCombinationDiagonal();
+        expect(board.winningDiagonal.length).toEqual(2)
+    })
 })
