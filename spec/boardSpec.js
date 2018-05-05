@@ -28,4 +28,10 @@ describe('Board', function () {
         board.winningCombinationDiagonal();
         expect(board.winningDiagonal.length).toEqual(2);
     })
+
+    it('should create an array with all the winning combinations', function () {
+        board.createBoard();
+        board.setWinningCombinations();
+        expect(board.winningCombinations.length).toEqual(8);
+    })
 })

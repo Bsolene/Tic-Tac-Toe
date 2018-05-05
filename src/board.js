@@ -6,6 +6,7 @@ class Board {
         this.winningColumns = [];
         this.winningDiagonal = [];
         this.dimensionBoard = dimensionBoard;
+        this.winningCombinations = [];
     }
     createBoard() {
         for (let i = 0; i < this.numSquares; i++) {
@@ -47,6 +48,13 @@ class Board {
         };
 
         this.winningDiagonal.push(squareDiagLeft, squareDiagRight);
+    };
+
+    setWinningCombinations() {
+        this.winningCombinationRows();
+        this.winningCombinationColumns();
+        this.winningCombinationDiagonal();
+        this.winningCombinations = this.winningRows.concat(this.winningColumns, this.winningDiagonal);
     };
 };
 
